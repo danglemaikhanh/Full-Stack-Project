@@ -1,0 +1,33 @@
+
+img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 5%;
+}
+.example-header-image {
+  background-color: #a7a7a7;
+  background-size: cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.btn {
+  margin-top: 0.25rem;
+}
+
+.job {
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.user-card {
+  display: flex;
+  width: 80%;
+  margin: 0 auto 4rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+

@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "http://localhost:8080/employee",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

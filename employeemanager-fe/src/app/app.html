@@ -1,1 +1,10 @@
-<app-employee></app-employee>
+<app-navbar></app-navbar>
+<main>
+    <h2 class="heading">Employees</h2>
+    <div class="user-grid">
+        @for (e of employees; track e.id) {
+        <app-employee [employee]="e"></app-employee>
+        }
+    </div>
+</main>
+<div></div>
