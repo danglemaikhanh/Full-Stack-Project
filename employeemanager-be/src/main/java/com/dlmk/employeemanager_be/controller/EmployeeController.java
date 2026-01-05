@@ -2,7 +2,6 @@ package com.dlmk.employeemanager_be.controller;
 
 import com.dlmk.employeemanager_be.model.Employee;
 import com.dlmk.employeemanager_be.service.EmployeeService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/employee")
 public class EmployeeController {
     private final EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @GetMapping("/all")
     public ResponseEntity<List<Employee>> getAllEmployees() {

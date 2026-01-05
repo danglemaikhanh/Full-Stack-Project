@@ -3,16 +3,17 @@ package com.dlmk.employeemanager_be.service;
 import com.dlmk.employeemanager_be.exception.EmployeeNotFoundException;
 import com.dlmk.employeemanager_be.model.Employee;
 import com.dlmk.employeemanager_be.repository.EmployeeRepo;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.*;
 
 @Service
-@RequiredArgsConstructor
 public class EmployeeService {
     private final EmployeeRepo employeeRepo;
+
+    public EmployeeService(EmployeeRepo employeeRepo) {
+        this.employeeRepo = employeeRepo;
+    }
 
     public Employee addEmployee(Employee employee) {
         employee.setEmployeeCode(UUID.randomUUID().toString());
