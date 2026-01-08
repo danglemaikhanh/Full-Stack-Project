@@ -1,1 +1,15 @@
-<p>navbar works!</p>
+<mat-toolbar class="navbar">
+    <a [routerLink]="">Employee Manager</a>
+    <span class="example-spacer"></span>
+    <section>
+        <div class="example-flex-container">
+            <button matButton (click)="openCreateDialog()">
+                <mat-icon>add</mat-icon>
+                Add Employee
+            </button>
+        </div>
+        <form class="example-flex-container">
+            <input type="text" placeholder="Search employees..." id="searchName"/>
+        </form>
+    </section>
+</mat-toolbar>

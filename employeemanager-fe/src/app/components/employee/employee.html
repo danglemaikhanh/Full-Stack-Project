@@ -1,18 +1,23 @@
 <section>
-    
-        <mat-card class="example-card user-card" appearance="outlined">
-            <mat-card-header class="example-header-image">
-                <img [src]="employee.imageUrl" alt="employee photo" />
-            </mat-card-header>
-            <mat-card-content>
-                <h3>{{ employee.name }}</h3>
-                <h3 class="job">{{ employee.jobTitle }}</h3>
-                <p>{{ employee.email }}</p>
-                <p>{{ employee.phone }}</p>
-                <p>{{ employee.employeeCode }}</p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button class="btn" matButton="filled">Contacts</button>
-            </mat-card-actions>
-        </mat-card>
+    <mat-card class="example-card user-card" appearance="outlined">
+        <mat-card-header class="example-header-image">
+            <img [src]="employee.imageUrl" alt="employee photo" />
+        </mat-card-header>
+        <mat-card-content>
+            <h3>Name: {{ employee.name }}</h3>
+            <h3 class="job">{{ employee.jobTitle }}</h3>
+            <p>Email: {{ employee.email }}</p>
+            <p>Phone: {{ employee.phone }}</p>
+            <p>Code: {{ employee.employeeCode }}</p>
+        </mat-card-content>
+        <mat-card-actions class="example-flex-container">
+            <button matMiniFab (click)="openUpdateDialog(employee)">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button matMiniFab>
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
 </section>
+
