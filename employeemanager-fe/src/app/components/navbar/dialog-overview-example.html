@@ -1,16 +1,39 @@
 <h2 mat-dialog-title>
-    {{ data.mode === 'update' ? 'Update Employee' : 'Create Employee' }}
+  {{ data.mode === 'update' ? 'Update Employee' : data.mode === 'create' ?
+  'Create Employee' : 'Delete Employee' }}
 </h2>
 <mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="employee.name">
-  </mat-form-field>
+  @if(data.mode === 'delete') {
+  <p>Are you sure you want to delete {{ employee.name }}?</p>
+  } @else {
+  <p>Please fill in the employee details below:</p>
+  <div class="flex-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput id="name" [(ngModel)]="employee.name" name="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput id="email" [(ngModel)]="employee.email" name="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Position</mat-label>
+      <input matInput id="jobTitle" [(ngModel)]="employee.jobTitle"
+        name="jobTitle">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput id="phone" [(ngModel)]="employee.phone" name="phone">
+    </mat-form-field>
+  </div>
+  }
+
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button matButton (click)="cancel()">Cancel</button>
-    <button matButton [mat-dialog-close]="save()">
-        {{ data.mode === 'update' ? 'Update' : 'Create' }}
-    </button>
+  <button matButton (click)="cancel()">Cancel</button>
+  <button matButton (click)="save()">
+    {{ data.mode === 'update' ? 'Update' : data.mode === 'create' ? 'Create' :
+    'Delete' }}
+  </button>
 </mat-dialog-actions>

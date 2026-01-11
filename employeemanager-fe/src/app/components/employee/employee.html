@@ -14,7 +14,7 @@
             <button matMiniFab (click)="openUpdateDialog(employee)">
                 <mat-icon>edit</mat-icon>
             </button>
-            <button matMiniFab>
+            <button matMiniFab (click)="deleteEmployee(employee.id!)">
                 <mat-icon>close</mat-icon>
             </button>
         </mat-card-actions>

@@ -7,7 +7,7 @@ import { IEmployee } from './models/employee.model';
   selector: 'app-root',
   imports: [Navbar, Employee],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrls: ['./app.scss'],
 })
 export class App implements OnInit {
   protected readonly title = signal('Employee Manager');
@@ -37,10 +37,5 @@ export class App implements OnInit {
       console.log(`Mitarbeiter mit dem ${id}: `, employee);
     });
   }
-
-  public onOpenModal(employee: Employee, mode: string): void {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.style.display = 'none';
-  }
+  
 }

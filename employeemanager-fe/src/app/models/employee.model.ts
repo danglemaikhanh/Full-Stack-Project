@@ -4,6 +4,6 @@ export interface IEmployee {
     email: string;
     jobTitle: string;
     phone: string;
-    imageUrl: string;
+    imageUrl?: string;
     employeeCode?: string;
 }

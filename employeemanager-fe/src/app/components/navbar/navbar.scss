@@ -13,7 +13,7 @@ section {
   flex-wrap: wrap;
 }
 
-input[type="text"] {
+input[type='text'] {
   padding: 10px;
   border-radius: 8px;
   margin-right: 4px;
@@ -21,17 +21,23 @@ input[type="text"] {
   border: none;
 }
 .navbar {
-    background-color: #1976d2;
-    color: white;
+  background-color: #1976d2;
+  color: white;
 }
 
-button {
-    color: white !important;
+.btn {
+  color: white !important;
 }
-button:hover {
-    background-color: #1565c0 !important;
+.btn:hover {
+  background-color: #1565c0 !important;
 }
 
-a{
-    cursor: pointer;
+a {
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
